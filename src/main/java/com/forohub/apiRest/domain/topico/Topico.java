@@ -1,13 +1,14 @@
 package com.forohub.apiRest.domain.topico;
 
 import com.forohub.apiRest.domain.usuario.Usuario;
-import com.forohub.apiRest.topico.TopicoRegistroDTO;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode;
+
+
+import java.time.LocalDateTime;
 
 @Table(name = "topicos")
 @Entity(name = "Topico")
@@ -28,13 +29,73 @@ public class Topico {
     private Usuario usuario;
     @Enumerated(EnumType.STRING)
     private Curso curso;
+    private LocalDateTime fecha;
 
 
-    public Topico(@Valid TopicoRegistroDTO topicoRegistroDTO, Usuario usuario) {
+    public Topico(TopicoRegistroDTO topicoRegistroDTO, Usuario usuario) {
         this.titulo = topicoRegistroDTO.titulo();
         this.mensaje = topicoRegistroDTO.mensaje();
         this.estado = topicoRegistroDTO.estado();
+        this.fecha = LocalDateTime.now();
         this.usuario = usuario;
 
+    }
+
+    public Topico(){}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
 }

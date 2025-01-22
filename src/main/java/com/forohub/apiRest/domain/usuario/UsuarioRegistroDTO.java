@@ -1,6 +1,5 @@
-package com.forohub.apiRest.usuario;
+package com.forohub.apiRest.domain.usuario;
 
-import com.forohub.apiRest.domain.usuario.Perfil;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

@@ -1,6 +1,5 @@
 package com.forohub.apiRest.domain.usuario;
 
-import com.forohub.apiRest.usuario.UsuarioRegistroDTO;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -16,8 +15,10 @@ public class Usuario {
     Long id;
     private String nombre;
     private String contrasena;
+    @Enumerated(EnumType.STRING)
     private Perfil perfil;
 
+    public Usuario(){}
     public Usuario(@Valid UsuarioRegistroDTO usuarioRegistroDTO) {
         this.nombre = usuarioRegistroDTO.nombre();
         this.contrasena = usuarioRegistroDTO.contrasena();

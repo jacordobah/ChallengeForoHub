@@ -1,13 +1,10 @@
 package com.forohub.apiRest.controller;
 
 
-import com.forohub.apiRest.domain.topico.Topico;
-import com.forohub.apiRest.domain.topico.TopicoRepository;
 import com.forohub.apiRest.domain.usuario.Usuario;
 import com.forohub.apiRest.domain.usuario.UsuarioRepositoy;
-import com.forohub.apiRest.topico.TopicoRegistroDTO;
-import com.forohub.apiRest.usuario.UsuarioRegistroDTO;
-import com.forohub.apiRest.usuario.UsuarioRespuestaDTO;
+import com.forohub.apiRest.domain.usuario.UsuarioRegistroDTO;
+import com.forohub.apiRest.domain.usuario.UsuarioRespuestaDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

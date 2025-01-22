@@ -1,8 +1,9 @@
-package com.forohub.apiRest.topico;
+package com.forohub.apiRest.domain.topico;
 
-import com.forohub.apiRest.domain.topico.Curso;
-import com.forohub.apiRest.domain.topico.Estado;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDateTime;
 
 
 public record TopicoRegistroDTO(
@@ -10,11 +11,11 @@ public record TopicoRegistroDTO(
         String titulo,
         @NotBlank
         String mensaje,
-        @NotBlank
+        @NotNull
         Estado estado,
-        @NotBlank
+        @NotNull
         Long idUsuario,
-        @NotBlank
+        @NotNull
         Curso curso
 ){
 }
