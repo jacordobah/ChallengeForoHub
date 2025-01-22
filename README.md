@@ -19,5 +19,5 @@
 
 
 
-    Desarrollado por Jose A. Cordoba 2024 para ONE alura. Formación principiante desarrollo web
+    Desarrollado por Jose A. Cordoba 2025 para ONE alura. Formación principiante desarrollo web
 </span>
