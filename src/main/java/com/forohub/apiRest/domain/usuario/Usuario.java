@@ -3,11 +3,9 @@ package com.forohub.apiRest.domain.usuario;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @Table(name = "usuarios")
 @Entity(name = "Usuario")
-@NoArgsConstructor
 @AllArgsConstructor
 public class Usuario {
     @Id

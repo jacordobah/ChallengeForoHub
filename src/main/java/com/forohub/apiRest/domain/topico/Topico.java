@@ -2,6 +2,7 @@ package com.forohub.apiRest.domain.topico;
 
 import com.forohub.apiRest.domain.usuario.Usuario;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,6 @@ import java.time.LocalDateTime;
 @Table(name = "topicos")
 @Entity(name = "Topico")
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 //@EqualsAndHashCode(of = "id")
 public class Topico {
@@ -97,5 +97,17 @@ public class Topico {
 
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
+    }
+
+    public void actualizar(@Valid TopicoActualizarDTO topicoActualizar) {
+        if(topicoActualizar.titulo()!=null){
+            this.setTitulo(topicoActualizar.titulo());
+        }
+        if(topicoActualizar.mensaje()!=null){
+            this.setMensaje(topicoActualizar.mensaje());
+        }
+        if(topicoActualizar.estado()!=null){
+            this.setEstado(topicoActualizar.estado());
+        }
     }
 }
